@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Luis E. Morales">
+  <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+   <!-- external stylesheet -->
+   <link rel="stylesheet" href="/assets/styles/nav.css">
+   <link rel="stylesheet" href="/assets/styles/style.css">
+   <link rel="stylesheet" href="/assets/styles/payment.css">
+   <title>MyWebsite</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-box">
+      <a class="nav-logo" href="/">
+        <img src="/assets/images/logo.svg">
+      </a>
+      <div class="link-box">
+        <a href="/assets/src/product.html?browseMen">Men</a>
+        <a href="/assets/src/product.html?browseWomen">Women</a>
+        <a href="/assets/src/product.html?browseKid">Kids</a>
+      </div>
+      <form action="/assets/src/product.html" class="search-box" role="search">
+        <input id="search-input" type="search" placeholder="Search" aria-label="Search">
+      </form>
+      <button>Cart</button>
+    </div>
+  </nav>
+  <main>
+    <div class="checkout-container">
+      <h1>Checkout</h1>
+      <div class="checkout-form">
+        <form
+          method="get"
+          id="order-form"
+          action="/"
+          onsubmit="return validateForm()"
+          enctype="text/plain" >
+          <!-- Bag Information-->
+          <div>
+            <h2>In Your Bag</h2><hr>
+            <div class="bag-details">
+              <input type="text" value="12" id="skuNumber" name="sku" class="visually-hidden">
+              <img id="item-image" src="/assets/images/shoe_kid_black_1.png">
+              <div>
+                <h3 id="item-name">Nike</h3>
+                <h3 id="item-type">Men's Shoes</h3>
+                <h3 id="shoe-size">Shoe Size: 9</h3>
+                <h3 id="item-price">$190</h3>
+                <label for="quantity">Qty:</label>
+                <input name="Quantity" type="number" value="1" id="hour" min="1" max="99" required/>
+              </div>
+            </div>
+          </div>
+          <!-- User Information -->
+          <div>
+            <h2>User Information</h2><hr>
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required>
+          </div>
+          <!-- Shipping Information -->
+          <div>
+            <h2>Shipping Information</h2><hr>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <div>
+              <select name="shippingMethod" required>
+                <option selected="selected"></option>
+                <option value="0-day">Overnight</option>
+                <option value="1-day">One-day</option>
+                <option value="2-day">Two-day</option>
+                <option value="5-day">Standard</option>
+              </select>
+              <label for="shippingMethod">Shipping</label>
+            </div>
+            <input type="tel" name="phoneNumber" placeholder="Phone Number" 
+            maxlength="13" required>
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <!-- Credit Card Information-->
+          <div>
+            <h2>Payment</h2><hr>
+            <input type="text" name="cardNumber" placeholder="Enter Card Number"
+              pattern="[0-9]{16}" size="18" maxlength="16" required>
+            <div class="exp-code">
+              <div class="expiration">
+                <input id="exp-month" type="text" name="monthExp" size="2" maxlength="2" 
+                placeholder="00" required>/
+                <input id="exp-year" type="text" name="yearExp" size="2" maxlength="2"
+                placeholder="00" required>
+              </div>
+              <label for="cvvCode">Code:</label>
+              <input id="cvv-input" type="text" name="cvvCode" size="3" maxlength="3" minlength="3"
+              placeholder="000" required>
+            </div>
+          </div>
+          <!-- Submit Button -->
+          <div class="centered">
+            <input type="submit" value="Place Order">
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/scripts/data.js"></script>
+  <script src="/assets/scripts/product.js"></script>
+  <script src="/assets/scripts/payment.js"></script>
+</body>
+</html>

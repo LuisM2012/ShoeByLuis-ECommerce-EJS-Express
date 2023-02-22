@@ -1,0 +1,117 @@
+.bag-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 180px;
+  max-height: 300px;
+}
+.bag-details img {
+  width: 180px;
+}
+
+#shoe-size, #item-type, #item-price {
+  font-weight: 400;
+}
+#shoe-size, #item-type {
+  font-size: 16px;
+  margin: 5px 0px;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.checkout-container h1 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.checkout-container hr {
+  margin: 5px 0px 20px 0px;
+}
+.checkout-form {
+  width: 80vw;
+  max-width: 500px;
+  min-width: 293px;
+}
+.checkout-form h2 {
+  font-size: 25px;
+  margin-left: 10px;
+}
+.checkout-form form > div {
+  margin: 20px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.checkout-form input, .checkout-form select  {
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px;
+  height: 30px;
+  outline: none;
+  border: 2px solid rgb(172, 172, 172);
+  font-size: 16px;
+}
+.checkout-form select {
+  height: 40px;
+}
+.checkout-form input:focus {
+  border-color: black;
+}
+.checkout-form label {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+input[type="submit"] {
+  width: 240px;
+  height: 50px;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  border: none;
+  outline: none;
+}
+input[type="submit"]:hover {
+  background-color: rgba(0, 0, 0, 0.515);
+}
+
+.centered {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+}
+
+#exp-year, #exp-month {
+  margin: 0px;
+  padding: none;
+  border: none;
+  height: 100%;
+  width: 20px;
+}
+.expiration {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px 0px;
+  margin: 5px;
+  height: 30px;
+  width: fit-content;
+  border: 2px solid rgb(172, 172, 172);
+  font-size: 30px;
+}
+.expiration:hover {
+  cursor:default;
+}
+
+.exp-code {
+  display: flex;
+  align-items: center;
+}
+.exp-code label{
+  margin-left: 40px;
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Luis E. Morales">
+  <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+   <!-- external stylesheet -->
+   <link rel="stylesheet" href="/assets/styles/nav.css">
+   <link rel="stylesheet" href="/assets/styles/style.css">
+   <link rel="stylesheet" href="/assets/styles/product.css">
+   <title>MyWebsite</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-box">
+      <a class="nav-logo" href="/">
+        <img src="/assets/images/logo.svg">
+      </a>
+      <div class="link-box">
+        <a href="/assets/src/product.html?browseMen">Men</a>
+        <a href="/assets/src/product.html?browseWomen">Women</a>
+        <a href="/assets/src/product.html?browseKid">Kids</a>
+      </div>
+      <form action="/assets/src/product.html" class="search-box" role="search">
+        <input id="search-input" type="search" placeholder="Search" aria-label="Search">
+      </form>
+      <button>Cart</button>
+    </div>
+  </nav>
+  <main>
+    <div id="product-container">
+    </div>
+  </main>
+  <script src="/assets/scripts/data.js"></script>
+  <script src="/assets/scripts/product.js"></script>
+  <script src="/assets/scripts/browse.js"></script>
+</body>
+</html>
