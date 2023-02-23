@@ -5,7 +5,7 @@ const DATA = [
     type: "kid",
     color: "black",
     price: 180,
-    image: "/assets/images/shoe_kid_black_1.png",
+    image: "../../assets/images/shoe_kid_black_1.png",
     rating: "★★★★☆",
   },
   {
@@ -14,7 +14,7 @@ const DATA = [
     type: "kid",
     color: "black",
     price: 200,
-    image: "/assets/images/shoe_kid_black_2.png",
+    image: "../../assets/images/shoe_kid_black_2.png",
     rating: "★★★★★",
   },
   {
@@ -23,7 +23,7 @@ const DATA = [
     type: "kid",
     color: "blue",
     price: 190,
-    image: "/assets/images/shoe_kid_blue_1.png",
+    image: "../../assets/images/shoe_kid_blue_1.png",
     rating: "★★★★☆",
   },
   {
@@ -32,7 +32,7 @@ const DATA = [
     type: "kid",
     color: "blue",
     price: 150,
-    image: "/assets/images/shoe_kid_blue_2.png",
+    image: "../../assets/images/shoe_kid_blue_2.png",
     rating: "★★★☆☆",
   },
   {
@@ -41,7 +41,7 @@ const DATA = [
     type: "kid",
     color: "gray",
     price: 100,
-    image: "/assets/images/shoe_kid_gray_1.png",
+    image: "../../assets/images/shoe_kid_gray_1.png",
     rating: "★★☆☆☆",
   },
   {
@@ -50,7 +50,7 @@ const DATA = [
     type: "kid",
     color: "gray",
     price: 120,
-    image: "/assets/images/shoe_kid_gray_2.png",
+    image: "../../assets/images/shoe_kid_gray_2.png",
     rating: "★★★☆☆",
   },
   {
@@ -59,7 +59,7 @@ const DATA = [
     type: "kid",
     color: "green",
     price: 180,
-    image: "/assets/images/shoe_kid_green_1.png",
+    image: "../../assets/images/shoe_kid_green_1.png",
     rating: "★★★★☆",
   },
   {
@@ -68,7 +68,7 @@ const DATA = [
     type: "kid",
     color: "green",
     price: 160,
-    image: "/assets/images/shoe_kid_green_2.png",
+    image: "../../assets/images/shoe_kid_green_2.png",
     rating: "★★★☆☆",
   },
   {
@@ -77,7 +77,7 @@ const DATA = [
     type: "kid",
     color: "white",
     price: 170,
-    image: "/assets/images/shoe_kid_white_1.png",
+    image: "../../assets/images/shoe_kid_white_1.png",
     rating: "★★★☆☆",
   },
   {
@@ -86,7 +86,7 @@ const DATA = [
     type: "kid",
     color: "white",
     price: 100,
-    image: "/assets/images/shoe_kid_white_2.png",
+    image: "../../assets/images/shoe_kid_white_2.png",
     rating: "★★☆☆☆",
   },
   // MEN
@@ -96,7 +96,7 @@ const DATA = [
     type: "men",
     color: "black",
     price: 145,
-    image: "/assets/images/shoe_men_black_1.png",
+    image: "../../assets/images/shoe_men_black_1.png",
     rating: "★★★☆☆",
   },
   {
@@ -105,7 +105,7 @@ const DATA = [
     type: "men",
     color: "black",
     price: 185,
-    image: "/assets/images/shoe_men_black_2.png",
+    image: "../../assets/images/shoe_men_black_2.png",
     rating: "★★★★☆",
   },
   {
@@ -114,7 +114,7 @@ const DATA = [
     type: "men",
     color: "blue",
     price: 130,
-    image: "/assets/images/shoe_men_blue_1.png",
+    image: "../../assets/images/shoe_men_blue_1.png",
     rating: "★★★☆☆",
   },
   {
@@ -123,7 +123,7 @@ const DATA = [
     type: "men",
     color: "blue",
     price: 160,
-    image: "/assets/images/shoe_men_blue_2.png",
+    image: "../../assets/images/shoe_men_blue_2.png",
     rating: "★★★☆☆",
   },
   {
@@ -132,7 +132,7 @@ const DATA = [
     type: "men",
     color: "gray",
     price: 180,
-    image: "/assets/images/shoe_men_gray_1.png",
+    image: "../../assets/images/shoe_men_gray_1.png",
     rating: "★★★★☆",
   },
   {
@@ -141,7 +141,7 @@ const DATA = [
     type: "men",
     color: "gray",
     price: 165,
-    image: "/assets/images/shoe_men_gray_2.png",
+    image: "../../assets/images/shoe_men_gray_2.png",
     rating: "★★★☆☆",
   },
   {
@@ -150,7 +150,7 @@ const DATA = [
     type: "men",
     color: "green",
     price: 175,
-    image: "/assets/images/shoe_men_green_1.png",
+    image: "../../assets/images/shoe_men_green_1.png",
     rating: "★★★★☆",
   },
   {
@@ -159,7 +159,7 @@ const DATA = [
     type: "men",
     color: "green",
     price: 135,
-    image: "/assets/images/shoe_men_green_2.png",
+    image: "../../assets/images/shoe_men_green_2.png",
     rating: "★★★☆☆",
   },
   {
@@ -168,7 +168,7 @@ const DATA = [
     type: "men",
     color: "white",
     price: 190,
-    image: "/assets/images/shoe_men_white_1.png",
+    image: "../../assets/images/shoe_men_white_1.png",
     rating: "★★★★☆",
   },
   {
@@ -177,7 +177,7 @@ const DATA = [
     type: "men",
     color: "white",
     price: 200,
-    image: "/assets/images/shoe_men_white_2.png",
+    image: "../../assets/images/shoe_men_white_2.png",
     rating: "★★★★★",
   },
   // WOMEN
@@ -187,7 +187,7 @@ const DATA = [
     type: "women",
     color: "black",
     price: 220,
-    image: "/assets/images/shoe_women_black_1.png",
+    image: "../../assets/images/shoe_women_black_1.png",
     rating: "★★★★★",
   },
   {
@@ -196,7 +196,7 @@ const DATA = [
     type: "women",
     color: "black",
     price: 230,
-    image: "/assets/images/shoe_women_black_2.png",
+    image: "../../assets/images/shoe_women_black_2.png",
     rating: "★★★★★",
   },
   {
@@ -205,7 +205,7 @@ const DATA = [
     type: "women",
     color: "pink",
     price: 145,
-    image: "/assets/images/shoe_women_pink_1.png",
+    image: "../../assets/images/shoe_women_pink_1.png",
     rating: "★★★★☆",
   },
   {
@@ -214,7 +214,7 @@ const DATA = [
     type: "women",
     color: "pink",
     price: 125,
-    image: "/assets/images/shoe_women_pink_2.png",
+    image: "../../assets/images/shoe_women_pink_2.png",
     rating: "★★☆☆☆",
   },
   {
@@ -223,7 +223,7 @@ const DATA = [
     type: "women",
     color: "purple",
     price: 175,
-    image: "/assets/images/shoe_women_purple_1.png",
+    image: "../../assets/images/shoe_women_purple_1.png",
     rating: "★★★★☆",
   },
   {
@@ -232,7 +232,7 @@ const DATA = [
     type: "women",
     color: "purple",
     price: 100,
-    image: "/assets/images/shoe_women_purple_2.png",
+    image: "../../assets/images/shoe_women_purple_2.png",
     rating: "★★☆☆☆",
   },
   {
@@ -241,7 +241,7 @@ const DATA = [
     type: "women",
     color: "green",
     price: 120,
-    image: "/assets/images/shoe_women_green_1.png",
+    image: "../../assets/images/shoe_women_green_1.png",
     rating: "★★★★☆",
   },
   {
@@ -250,7 +250,7 @@ const DATA = [
     type: "women",
     color: "green",
     price: 145,
-    image: "/assets/images/shoe_women_green_2.png",
+    image: "../../assets/images/shoe_women_green_2.png",
     rating: "★★★☆☆",
   },
   {
@@ -259,7 +259,7 @@ const DATA = [
     type: "women",
     color: "white",
     price: 160,
-    image: "/assets/images/shoe_women_white_1.png",
+    image: "../../assets/images/shoe_women_white_1.png",
     rating: "★★★★☆",
   },
   {
@@ -268,7 +268,7 @@ const DATA = [
     type: "women",
     color: "white",
     price: 200,
-    image: "/assets/images/shoe_women_white_2.png",
+    image: "../../assets/images/shoe_women_white_2.png",
     rating: "★★★★★",
   },
 ]

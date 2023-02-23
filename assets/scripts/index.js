@@ -12,7 +12,7 @@ function getPopular() {
 }
 
 function popularItemDisplay(item) {
-  return `<a href="/assets/src/details.html?sku=${item.sku}">
+  return `<a href="../../assets/src/details.html?sku=${item.sku}">
             <img src="${item.image}">
           </a>`;
 }

@@ -49,7 +49,7 @@ function capitalizeFirst(string) {
 function getItemDisplay(item) 
 {
   return `<td>
-            <a href="/assets/src/details.html?sku=${item.sku}">
+            <a href="../../assets/src/details.html?sku=${item.sku}">
               <img src="${item.image}">
               <h2>${item.brand} Shoe</h2>
               <h4>${capitalizeFirst(item.type)}</h4>

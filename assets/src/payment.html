@@ -6,23 +6,23 @@
   <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
    <!-- external stylesheet -->
-   <link rel="stylesheet" href="/assets/styles/nav.css">
-   <link rel="stylesheet" href="/assets/styles/style.css">
-   <link rel="stylesheet" href="/assets/styles/payment.css">
+   <link rel="stylesheet" href="../../assets/styles/nav.css">
+   <link rel="stylesheet" href="../../assets/styles/style.css">
+   <link rel="stylesheet" href="../../assets/styles/payment.css">
    <title>MyWebsite</title>
 </head>
 <body>
   <nav>
     <div class="nav-box">
-      <a class="nav-logo" href="/">
-        <img src="/assets/images/logo.svg">
+      <a class="nav-logo" href="../../">
+        <img src="../../assets/images/logo.svg">
       </a>
       <div class="link-box">
-        <a href="/assets/src/product.html?browseMen">Men</a>
-        <a href="/assets/src/product.html?browseWomen">Women</a>
-        <a href="/assets/src/product.html?browseKid">Kids</a>
+        <a href="../../assets/src/product.html?browseMen">Men</a>
+        <a href="../../assets/src/product.html?browseWomen">Women</a>
+        <a href="../../assets/src/product.html?browseKid">Kids</a>
       </div>
-      <form action="/assets/src/product.html" class="search-box" role="search">
+      <form action="../../assets/src/product.html" class="search-box" role="search">
         <input id="search-input" type="search" placeholder="Search" aria-label="Search">
       </form>
       <button>Cart</button>
@@ -35,7 +35,7 @@
         <form
           method="get"
           id="order-form"
-          action="/"
+          action="../../"
           onsubmit="return validateForm()"
           enctype="text/plain" >
           <!-- Bag Information-->
@@ -43,7 +43,7 @@
             <h2>In Your Bag</h2><hr>
             <div class="bag-details">
               <input type="text" value="12" id="skuNumber" name="sku" class="visually-hidden">
-              <img id="item-image" src="/assets/images/shoe_kid_black_1.png">
+              <img id="item-image" src="../../assets/images/shoe_kid_black_1.png">
               <div>
                 <h3 id="item-name">Nike</h3>
                 <h3 id="item-type">Men's Shoes</h3>
@@ -104,8 +104,8 @@
       </div>
     </div>
   </main>
-  <script src="/assets/scripts/data.js"></script>
-  <script src="/assets/scripts/product.js"></script>
-  <script src="/assets/scripts/payment.js"></script>
+  <script src="../../assets/scripts/data.js"></script>
+  <script src="../../assets/scripts/product.js"></script>
+  <script src="../../assets/scripts/payment.js"></script>
 </body>
 </html>
