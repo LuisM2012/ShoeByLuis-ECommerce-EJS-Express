@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Luis E. Morales">
+  <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+   <!-- external stylesheet -->
+   <link rel="stylesheet" href="../styles/nav.css">
+   <link rel="stylesheet" href="../styles/style.css">
+   <link rel="stylesheet" href="../styles/details.css">
+   <title>ShoesByLuis</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-box">
+      <a class="nav-logo" href="../">
+        <img src="../logo.svg">
+      </a>
+      <div class="link-box">
+        <a href="../browse/men">Men</a>
+        <a href="../browse/women">Women</a>
+        <a href="../browse/kid">Kids</a>
+      </div>
+      <form action="../browse" method="get" class="search-box" role="search">
+        <input id="search-input" type="search" placeholder="Search" aria-label="Search" name="search">
+      </form>
+      <a class="cart" href="../checkout">Cart</a>
+    </div>
+  </nav>
+  <main>
+    <div class="details-container">
+      <form action="/cart" method="post">
+        <div class="item-details">
+          <h2 id="item-name"><%= locals.case(item.brand) %></h2>
+          <h3 id="item-type"><%= locals.case(item.type) %></h3>
+          <h3 id="item-price">$<%= item.price %></h3>
+        </div>
+        <img id="item-image" src="../images/<%= item.image %>">
+        <div class="item-details">
+          <h2>Description</h2>
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad numquam rem itaque obcaecati illum fugit nihil! Dignissimos iure id nobis vitae natus! Aut esse reprehenderit eaque, necessitatibus exercitationem vitae quis.</h3>
+          <br><br>
+        </div>
+        <div class="selection-form">
+          <input type="text" value="<%= item.sku %>" id="skuNumber" name="sku" class="visually-hidden">
+          <div id="size-selection">
+            <div>
+              <input id="size-6" type="radio" value="6/7.5" name="shoeSize" class="visually-hidden" required>
+              <label for="size-6">M 6 / W 7.5</label>
+            </div>
+            <div>
+              <input id="size-7" type="radio" value="7/8.5" name="shoeSize" class="visually-hidden">
+              <label for="size-7">M 7 / W 8.5</label>
+            </div>
+            <div>
+              <input id="size-8" type="radio" value="8/9.5" name="shoeSize" class="visually-hidden">
+              <label for="size-8">M 8 / W 9.5</label>
+            </div>
+            <div>
+              <input id="size-9" type="radio" value="9/10.5" name="shoeSize" class="visually-hidden">
+              <label for="size-9">M 9 / W 10.5</label>
+            </div>
+            <div>
+              <input id="size-10" type="radio" value="10/11.5" name="shoeSize" class="visually-hidden" checked>
+              <label for="size-10">M 10 / W 11.5</label>
+            </div>
+            <div>
+              <input id="size-11" type="radio" value="11/12.5" name="shoeSize" class="visually-hidden">
+              <label for="size-11">M 11 / W 12.5</label>
+            </div>
+            <div>
+              <input id="size-12" type="radio" value="12/13.5" name="shoeSize" class="visually-hidden">
+              <label for="size-12">M 12 / W 13.5</label>
+            </div>
+            <div>
+              <input id="size-13" type="radio" value="13/14.5" name="shoeSize" class="visually-hidden">
+              <label for="size-13">M 13 / W 14.5</label>
+            </div>
+            <div>
+              <input id="size-14" type="radio" value="14/15.5" name="shoeSize" class="visually-hidden">
+              <label for="size-14">M 14 / W 15.5</label>
+            </div>
+            <div>
+              <input id="size-15" type="radio" value="15/16.5" name="shoeSize" class="visually-hidden">
+              <label for="size-15">M 15 / W 16.5</label>
+            </div>
+          </div>
+          <input type="submit" id="order-now" value="Add to Cart">
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

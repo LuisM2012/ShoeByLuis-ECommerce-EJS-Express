@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Luis E. Morales">
+  <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+   <!-- external stylesheet -->
+   <link rel="stylesheet" href="../styles/nav.css">
+   <link rel="stylesheet" href="../styles/style.css">
+   <link rel="stylesheet" href="../styles/order.css">
+   <title>ShoesByLuis</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-box">
+      <a class="nav-logo" href="../">
+        <img src="../logo.svg">
+      </a>
+      <div class="link-box">
+        <a href="../browse/men">Men</a>
+        <a href="../browse/women">Women</a>
+        <a href="../browse/kid">Kids</a>
+      </div>
+      <form action="../browse" method="get" class="search-box" role="search">
+        <input id="search-input" type="search" placeholder="Search" aria-label="Search" name="search">
+      </form>
+      <a class="cart" href="../checkout">Cart</a>
+    </div>
+  </nav>
+  <main>
+    <div class="order-details">
+      <h1>Order Information</h1>
+      <div id="order-scroll">
+        <% orderItems.forEach(item => { %>
+        <div>
+          <a href="../details/<%= item.sku %>">
+            <img src="../images/<%= item.image %>">
+          </a>
+          <div>
+            <h2><%= locals.case(item.brand) %></h2>
+            <h3>Shoe Size: <%= item.shoeSize %></h3>
+            <h3>Price: $<%= item.price %></h3>
+            <h3>Qty: <%= item.quantity %></h3>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <h2>Total: $<%= orderTotal %></strong></h2>
+      <a href="../">Go to Home Page</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Luis E. Morales">
+  <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+   <!-- external stylesheet -->
+   <link rel="stylesheet" href="../styles/nav.css">
+   <link rel="stylesheet" href="../styles/style.css">
+   <link rel="stylesheet" href="../styles/checkout.css">
+   <title>ShoesByLuis</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-box">
+      <a class="nav-logo" href="../">
+        <img src="../logo.svg">
+      </a>
+      <div class="link-box">
+        <a href="../browse/men">Men</a>
+        <a href="../browse/women">Women</a>
+        <a href="../browse/kid">Kids</a>
+      </div>
+      <form action="../browse" method="get" class="search-box" role="search">
+        <input id="search-input" type="search" placeholder="Search" aria-label="Search" name="search">
+      </form>
+      <a class="cart" href="../checkout">Cart</a>
+    </div>
+  </nav>
+  <main>
+    <div class="checkout-container">
+      <h1>Checkout</h1>
+      <div class="checkout-form">
+        <form
+          action="/cart/order"
+          method="post"
+          onsubmit="return validateForm()">
+          <!-- Bag Information-->
+          <input id="bag" type="checkbox" class="visually-hidden">
+          <label for="bag">In Your Bag</label><hr>
+          <div>
+            <div id="bag-details">
+              <% cart.forEach( item => { %>
+              <div id="item-<%= item.sku %>-<%= item.shoeSize %>">
+                <a href="../details/<%= item.sku %>">
+                  <img src="../images/<%= item.image %>">
+                </a>
+                <div>
+                  <h3 class="brand"><%= locals.case(item.brand) %></h3>
+                  <h4 class="type"><%= locals.case(item.type) %>  (<%= item.shoeSize %>)</h4>
+                  <h3 class="price">$<%= item.price %></h3>
+                  <div>
+                    <label for="Quantity<%= item.sku %>">Qty:</label>
+                    <input oninput="changeQty(this, '<%= item.sku %>', '<%= item.shoeSize %>', '<%= item.price %>')" 
+                        name="Quantity<%= item.sku %>" type="number" 
+                        value="<%= item.quantity %>" min="1" max="99" required/>
+                  </div>
+                  <button onmousedown="removeFromCart({sku: '<%= item.sku %>', shoeSize: '<%= item.shoeSize %>', shoeSize: '<%= item.shoeSize %>'})">Remove</button>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+            <div class="bag-info">
+              <h2 id="cart-total">Total: $<%= total%></h2>
+            </div>
+          </div>
+          <!-- User Information -->
+          <input id="user" type="checkbox" class="visually-hidden">
+          <label for="user">User Information</label><hr>
+          <div>
+            <input type="text" name="firstName" placeholder="First Name" required>
+            <input type="text" name="lastName" placeholder="Last Name" required>
+          </div>
+          <!-- Shipping Information -->
+          <input id="ship" type="checkbox" class="visually-hidden">
+          <label for="ship">Shipping Information</label><hr>
+          <div>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <div>
+              <label for="state">State</label>
+              <select id="state" name="state" required>
+                <option selected="selected"></option>
+              </select>
+              <input type="text" name="zipcode" placeholder="Zip Code" maxlength="10" size="10" required>
+            </div>
+            <div>
+              <label for="shippingMethod">Shipping</label>
+              <select name="shippingMethod" required>
+                <option selected="selected"></option>
+                <option value="0-day">Overnight</option>
+                <option value="1-day">One-day</option>
+                <option value="2-day">Two-day</option>
+                <option value="5-day">Standard</option>
+              </select>
+            </div>
+            <input type="tel" name="phoneNumber" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email" required>
+          </div>
+          <!-- Credit Card Information-->
+          <input id="card" type="checkbox" class="visually-hidden">
+          <label for="card">Payment</label><hr>
+          <div>
+            <input type="text" name="cardNumber" placeholder="Enter Card Number"
+              pattern="[0-9]{16}" size="18" maxlength="16" required>
+            <div class="exp-code">
+              <div class="expiration">
+                <input id="exp-month" type="text" name="monthExp" size="2" maxlength="2" 
+                placeholder="00" required>/
+                <input id="exp-year" type="text" name="yearExp" size="2" maxlength="2"
+                placeholder="00" required>
+              </div>
+              <label for="cvvCode">Code:</label>
+              <input id="cvv-input" type="text" name="cvvCode" size="3" maxlength="3" minlength="3"
+              placeholder="000" required>
+            </div>
+          </div>
+          <!-- Submit Button -->
+          <div class="centered">
+            <input type="submit" value="Order Now">
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script>
+    window.onload = addStates() // call when window loads
+    // REQUIREMENT 2 calls to actual API server
+    async function addStates() {
+      const stateSelector =  document.getElementById("state")
+      const states = [] // could also use filter and return
+      fetch('http://localhost:5500/api/zipcode') // for some reason there's 51 states, maybe zipcode.csv mistake
+      .then(res => {return res.json()})
+      .then(data => {
+        data.forEach((zip) => {
+          if (!states.find(state => {return zip.state === state})) {
+            states.push(zip.state)
+          }
+        })
+      })
+      .then(done => {
+        states.sort().forEach(state => {
+          stateSelector.innerHTML += `<option value="${state}">${state}</option>`
+        })
+      })
+    }
+    // REQUIREMENT 2 calls to Client Server API
+    async function changeQty(input, sku, shoeSize, price) {
+      if (input.value && input.value > 0 && input.value < 100) {
+        fetch("/cart/", {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ sku: sku, quantity: input.value, shoeSize: shoeSize })
+        })
+        .then(data => { return data.json() })
+        .then(res => {
+          let text = document.getElementById("cart-total").innerHTML
+          let previous = Number(text.substring(8))
+          let now = previous + (res.after-res.before) * price
+          document.getElementById("cart-total").innerHTML = `Total: $${now}`
+        })
+      }
+    }
+
+    function removeFromCart(item) {
+      fetch("/cart/", {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(item)
+      })
+      .then(res => {
+        // easier to do this, than remove from DOM and recalculate price
+        window.location.reload() // will take care of recalculating total
+      })
+    }
+
+    function validateForm() {
+      var shippingMethod= document.getElementsByName("shippingMethod").item(0).value.trim().toUpperCase();
+      var email= document.getElementsByName("email").item(0).value.trim().toUpperCase();
+      var city= document.getElementsByName("city").item(0).value.trim().toUpperCase();
+      var address= document.getElementsByName("address").item(0).value.trim().toUpperCase();
+      var lastName= document.getElementsByName("lastName").item(0).value.trim().toUpperCase();
+      var firstName= document.getElementsByName("firstName").item(0).value.trim().toUpperCase();
+      
+      if (!firstName.match(/[A-Z'.-]+/)) {
+        alert("Invalid First Name")
+        return false
+      } else if (!lastName.match(/[A-Z'.-]+/)) {
+        alert("Invalid Last Name")
+        return false
+      } else if (!address.match(/[0-9]+ [A-Z]+/)) {
+        alert("Invalid Address")
+        return false
+      } else if (!city.match(/[A-Z]+/)) {
+        alert("Invalid City")
+        return false
+      } else if (!email.match(/.+@[\w]+\.[\w]+/)) {
+        alert("Invalid Email")
+        return false
+      } else if (document.getElementById("bag-details").childElementCount < 1) {
+        alert("Cart is Empty")
+        return false
+      }
+    }
+    </script>
+</body>
+</html>

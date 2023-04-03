@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Luis E. Morales">
+  <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+   <!-- external stylesheet -->
+   <link rel="stylesheet" href="/styles/nav.css">
+   <link rel="stylesheet" href="/styles/style.css">
+   <title>ShoesByLuis</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-box">
+      <a class="nav-logo" href="/">
+        <img src="/logo.svg">
+      </a>
+      <div class="link-box">
+        <a href="/browse/men">Men</a>
+        <a href="/browse/women">Women</a>
+        <a href="/browse/kid">Kids</a>
+      </div>
+      <form action="/browse" method="get" class="search-box" role="search">
+        <input id="search-input" type="search" placeholder="Search" aria-label="Search" name="search">
+      </form>
+      <a class="cart" href="/checkout">Cart</a>
+    </div>
+  </nav>
+  <main>
+    <div>
+      <div>
+        <h1>404</h1>
+      </div>
+      <div>
+        <h1>Whoops!!!</h1>
+        <h1 style="color: black;">Looks Like You are Lost</h1>
+        <h2>Page Not Found</h2>
+      </div>
+    </div>
+  </main>
+  <style>
+    main > div {
+      height: 80vh; 
+      width: 100vw; 
+      display:flex; 
+      flex-direction: row; 
+      justify-content: center; 
+      align-items: center
+    }
+    /* main > div > h1 { */
+    main > div > div:nth-child(1) {
+      flex: 1; 
+      font-size: 100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    main > div > div:nth-child(2) {
+      flex: 1;
+      color: gray; 
+      display:flex; 
+      flex-direction: column;
+    }
+
+    @media screen and (max-width: 600px) {
+      main > div {
+        flex-direction: column;
+      }
+      main > div > div:nth-child(1) {
+        flex-direction: column;
+        justify-content: flex-end;
+        font-size: 80px;
+      }
+      main > div > div:nth-child(2) {
+        justify-content: flex-start;
+        text-align: center;
+      }
+    }
+  </style>
+</body>
+</html>

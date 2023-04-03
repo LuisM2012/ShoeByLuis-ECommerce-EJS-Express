@@ -1,0 +1,204 @@
+.overview {
+ display: flex;
+ flex-direction: column;
+ max-width: 100vw;
+ overflow-x: hidden;
+}
+
+.front-overview {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.front-overview h1 {
+  font-size: 60px;
+  margin: 0px 40px 10px 40px;
+}
+.browseAll {
+  outline: none;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+.browseAll:active, .browseAll:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-color: black;
+}
+
+#popular-items-scroll {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  padding: 20px;
+}
+.popular-items {
+  background-color: rgb(210, 210, 210);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+.popular-items h2{
+  margin-top: 20px;
+  font-size: 30px;
+}
+.popular-items img{
+  flex: 0 0 auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  margin: 0px 15px;
+  transition: transform 1s;
+}
+.popular-items img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.team-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 100px 0px;
+}
+.team-information h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.team-information img {
+  width: 50%;
+  max-width: 350px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgb(145, 145, 145);
+  transition: transform 1s;
+}
+.team-information img:hover {
+  transform: scale(1.02);
+}
+.team-information div {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.team-information p {
+  font-size: 20px;
+  margin: 10px;
+  max-width: 400px;
+}
+
+.testaments {
+  background-color: rgb(216, 216, 216);
+  padding: 30px;
+}
+.testaments h2 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.testaments-scroll {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+.testaments-scroll div {
+  flex: 0 0 auto;
+  width: 300px;
+  text-align: center;
+}
+.testaments-scroll p {
+  margin: 20px 50px 10px 50px;
+}
+.testaments-scroll h4 {
+  margin-top: 10px;
+}
+
+#recent-orders-scroll {
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+  padding: 20px;
+}
+.recent-orders {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+.recent-orders h2{
+  margin-top: 20px;
+  font-size: 30px;
+}
+.recent-orders img{
+  flex: 0 0 auto;
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  margin: 0px 15px;
+  transition: transform 1s;
+}
+.recent-orders img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.recent-orders button{
+  margin-top: 5px;
+  padding: 5px 10px;
+  font-size: large;
+  border-radius: 5px;
+  border: none;
+  background-color: black;
+  color: white;
+}
+.recent-orders button:hover{
+  background-color: rgba(0, 0, 0, 0.515);
+  cursor: pointer;
+}
+
+.order-item div {
+  display: flex;
+  justify-content: center;
+  cursor: default;
+}
+.order-item h2:hover {
+  cursor: pointer;
+}
+
+/* Star Rating */
+.rate {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 18px;
+}
+.rate input {
+  display: none;
+}
+.rate:not(:checked) > label::before {
+  content: '★';
+}
+.rate:checked > label::before {
+  content: '★';
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+  color: #ffc700;  
+}
+
+@media screen and (max-width: 600px) {
+  .team-information div {
+    flex-direction: column;
+  }
+}

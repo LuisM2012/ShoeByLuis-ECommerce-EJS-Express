@@ -1,0 +1,164 @@
+#bag-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#bag-details img {
+  width: 180px;
+}
+#bag-details > div {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+#bag-details div div {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+#bag-details div div div {
+  display: block;
+}
+#bag-details button {
+  padding: 5px;
+  margin: 0px 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+#bag-details button:hover {
+  background-color: rgba(0, 0, 0, 0.515);
+}
+
+.type, .price, .brand {
+  margin-left: 5px;
+}
+.type, .price {
+  font-weight: 400;
+}
+
+.bag-info h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 400;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.checkout-container h1 {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.checkout-container hr {
+  margin: 5px 0px 20px 0px;
+}
+.checkout-form {
+  width: 80vw;
+  max-width: 500px;
+  min-width: 293px;
+}
+.checkout-form h2 {
+  font-size: 25px;
+  padding-left: 10px;
+}
+.checkout-form h2:hover {
+ cursor: pointer; 
+}
+
+input[type="checkbox"] + label {
+  font-weight: 700;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked + label + hr + div {
+  display: none;
+} 
+
+.checkout-form form > div {
+  margin: 20px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.checkout-form input, .checkout-form select  {
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px;
+  height: 30px;
+  outline: none;
+  border: 2px solid rgb(172, 172, 172);
+  font-size: 16px;
+}
+.checkout-form select {
+  height: 40px;
+}
+.checkout-form input:focus {
+  border-color: black;
+}
+.checkout-form label {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+input[type="submit"] {
+  width: 240px;
+  height: 50px;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  border: none;
+  outline: none;
+}
+input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.515);
+}
+
+.centered {
+  display: inline;
+  justify-content: center;
+  align-items: center;
+}
+
+#exp-year, #exp-month {
+  margin: 0px;
+  padding: none;
+  border: none;
+  height: 100%;
+  width: 20px;
+}
+.expiration {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px 0px;
+  margin: 5px;
+  height: 30px;
+  width: fit-content;
+  border: 2px solid rgb(172, 172, 172);
+  font-size: 30px;
+}
+.expiration:hover {
+  cursor:default;
+}
+
+.exp-code {
+  display: flex;
+  align-items: center;
+}
+.exp-code label{
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  #bag-details > div {
+    flex-direction: column;
+  }
+}

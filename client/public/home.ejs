@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Luis E. Morales">
+  <meta name="description" content="E-commerce Website for assignment of UCI INF124.">
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
+   <!-- external stylesheet -->
+   <link rel="stylesheet" href="styles/nav.css">
+   <link rel="stylesheet" href="styles/style.css">
+   <link rel="stylesheet" href="styles/index.css">
+   <title>ShoesByLuis</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-box">
+      <a class="nav-logo" href="../">
+        <img src="../logo.svg">
+      </a>
+      <div class="link-box">
+        <a href="../browse/men">Men</a>
+        <a href="../browse/women">Women</a>
+        <a href="../browse/kid">Kids</a>
+      </div>
+      <form action="../browse" method="get" class="search-box" role="search">
+        <input id="search-input" type="search" placeholder="Search" aria-label="Search" name="search">
+      </form>
+      <a class="cart" href="../checkout">Cart</a>
+    </div>
+  </nav>
+  <main>
+    <div class="overview">
+      <div class="front-overview">
+        <h1>Shoes By Luis</h1>
+        <a class="browseAll" href="browse">Browse Selection</a>
+      </div>
+      <div class="popular-items">
+        <h2>Popular Items</h2>
+        <div id="popular-items-scroll">
+        <% items.forEach( item => { 
+          if (!(item.sku % 5)) {%>
+            <a href="../details/<%= item.sku %>">
+              <img src="../images/<%= item.image %>">
+            </a>
+        <%  }}) %>
+        </div>
+      </div>
+      <div class="team-information">
+        <h2>Our Team</h2>
+        <div>
+          <img src="/team_image.png">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum dolorem incidunt odio cum veniam id accusantium, esse mollitia est corrupti ratione! Recusandae necessitatibus officiis quam obcaecati, sunt laudantium aperiam quod.</p>
+        </div>
+      </div>
+      <div class="testaments">
+        <h2>Testaments</h2>
+        <div class="testaments-scroll">
+          <div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, et! Ipsam quas dignissimos quia nobis similique, consectetur adipisci sint aspernatur laudantium esse accusamus tempora quasi laboriosam ducimus dicta animi unde.</p>
+            <h4>- Mark Stark</h4>
+          </div>
+          <div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae quibusdam obcaecati fugiat tempore ut expedita deserunt iste a provident facilis quis soluta, possimus corporis ratione accusamus? Consequatur maxime tempore ratione.</p>
+            <h4>- Tyler White</h4>
+          </div>
+          <div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro ea adipisci esse velit dolores eaque animi. Nostrum placeat eligendi veritatis, at quidem ea quaerat laudantium, quos nulla consequuntur, enim aliquam.</p>
+            <h4>- Johnny Cash</h4>
+          </div>
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error eligendi libero minus inventore natus iusto accusamus. Minus, quae voluptatem quia consequuntur, adipisci aperiam sapiente libero possimus ducimus enim labore. Ab.</p>
+            <h4>- Jane Heart</h4>
+          </div>
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus inventore earum saepe quia quisquam maiores sed! Error consectetur at veritatis amet consequatur, neque saepe, aliquam beatae accusamus voluptatum, autem natus.</p>
+            <h4>- Maria Shell</h4>
+          </div>
+        </div>
+      </div>
+      <div class="recent-orders">
+        <h2>Recent Orders</h2>
+        <div id="recent-orders-scroll">
+        <% recentItems.forEach( item => { %>
+          <a href="../details/<%= item.sku %>">
+            <img src="../images/<%= item.image %>">
+          </a>
+        <%  }) %>
+        </div>
+        <% if (recentItems.length == 0) {%>
+        <div>
+          <p>There are no Orders yet!</p><br><br>
+          <a class="browseAll" href="browse">Browse Selection</a><br><br>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
