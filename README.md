@@ -1,6 +1,35 @@
 # Overview
  The client server takes care of the routing of the client pages. It also handles the session, and the cart that is to be kept on the session. The server server takes care of the API routing. It handles three resources, items, orders, order items, and zipcodes. Each has their respective types of calls and responses, look at Server (API) section for more info.  
 
+CLICK BELOW TO VIEW SAMPLE OUTPUT
+<details>  
+  <summary>Sample View</summary>
+  
+<p align="center">Home Page</p>
+<p align="center">
+  <img src=".sample/home-page.png" width="300" title="Home Page">
+</p>
+<p align="center">Product Page - Men/Women/Kid are derived</p>
+<p align="center">
+  <img src=".sample/product-page.png" width="300" title="Product Page">
+</p>
+<p align="center">Product Details Page</p>
+<p align="center">
+  <img src=".sample/product-details-page.png" width="300" title="Product Details Page">
+</p>
+<p align="center">Checkout Page</p>
+<p align="center">
+  <img src=".sample/checkout-page.png" width="300" title="Checkout Page">
+</p>
+
+<p align="center">Order Details Page</p>
+<p align="center">
+  <img src=".sample/order-details-page.png" width="300" title="Order Details Page">
+</p>
+  
+</details>   
+
+
 ## Instructions  
 External Dependencies:  
 
@@ -51,32 +80,6 @@ Page Tree
   - [Checkout](http://localhost:8080/checkout)  
     - [Order Details Page(Sample)](http://localhost:8080/order/40)  
 
-<details>  
-  <summary>Sample View</summary>
-  
-<p align="center">Home Page</p>
-<p align="center">
-  <img src=".sample/home-page.png" width="300" title="Home Page">
-</p>
-<p align="center">Product Page - Men/Women/Kid are derived</p>
-<p align="center">
-  <img src=".sample/product-page.png" width="300" title="Product Page">
-</p>
-<p align="center">Product Details Page</p>
-<p align="center">
-  <img src=".sample/product-details-page.png" width="300" title="Product Details Page">
-</p>
-<p align="center">Checkout Page</p>
-<p align="center">
-  <img src=".sample/checkout-page.png" width="300" title="Checkout Page">
-</p>
-
-<p align="center">Order Details Page</p>
-<p align="center">
-  <img src=".sample/order-details-page.png" width="300" title="Order Details Page">
-</p>
-  
-</details>  
 
 ### Documentation  
 Internal server calls (API-like) for session cart.  
