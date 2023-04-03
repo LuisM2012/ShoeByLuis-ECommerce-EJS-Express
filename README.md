@@ -1,5 +1,18 @@
 # Overview
-The client server takes care of the routing of the client pages. It also handles the session, and the cart that is to be kept on the session. The server server takes care of the API routing. It handles three resources, items, orders, order items, and zipcodes. Each has their respective types of calls and responses, look at Server (API) section for more info.  
+ The client server takes care of the routing of the client pages. It also handles the session, and the cart that is to be kept on the session. The server server takes care of the API routing. It handles three resources, items, orders, order items, and zipcodes. Each has their respective types of calls and responses, look at Server (API) section for more info.  
+
+## Instructions  
+External Dependencies:  
+
+- MySQL (version: latest)  
+
+Internal Dependencies (run npm install):  
+
+- sequelize
+- express
+- cors
+- express-session
+- etc...
 
 ### Duplication of Development:
 
